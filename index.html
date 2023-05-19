@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word counter</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <div id="container">
+        <p  class="heading"> Word Counter</p>
+        <textarea id="textarea" placeholder="type your text here">
+
+        </textarea>
+
+        <span id="words">0</span>Total Words
+        <span id="char">0</span>Total Characters
+
+ </div>
+
+    <script>
+
+            let textarea = document.getElementById("textarea");
+            textarea.addEventListener("input",function(){
+                let text = this.value;
+            
+                let char = text.length;
+            document.getElementById("char").innerHTML= char;
+
+            let words = text.trim().split(" ");
+            console.log(words);
+            let cleanlist = words.filter(function(elm){
+                return elm != "";
+
+            })
+            document.getElementById("words").innerHTML=cleanlist.length;
+
+            }) 
+            
+        
+       </script>
+</body>
+</html>
